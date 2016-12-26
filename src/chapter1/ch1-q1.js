@@ -44,3 +44,19 @@ export function hasUniqueCharactersSort(str) {
   }
   return true;
 }
+
+
+// My Solution
+export function hasUniqueCharactersHash(str) {
+    const storage = {};
+
+    for (let i = 0; i < str.length; i++) {
+        if (storage[str[i]]) { // If value exists, then return false
+            return false;
+        } else {
+            storage[str[i]] = true; // If not, add the value and continue
+        }
+    }
+
+    return true;
+}
